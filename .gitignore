@@ -204,3 +204,12 @@ gradle-app.setting
 **/build/
 
 # End of https://www.gitignore.io/api/java,gradle,eclipse,intellij
+src/main/java/io/obelus/sdk/analytics/ObelusClient.java
+src/main/java/io/obelus/sdk/analytics/ObelusNoConfigurationException.java
+src/main/java/io/obelus/sdk/analytics/event/ObelusEvent.java
+src/main/java/io/obelus/sdk/analytics/event/ObelusEventToGsonConverter.java
+src/main/java/io/obelus/sdk/analytics/event/ObelusEventToJsonConverter.java
+src/main/resources/
+src/test/java/io/obelus/sdk/analytics/ObelusClientTest.java
+src/test/java/io/obelus/sdk/analytics/event/
+src/test/resources/
