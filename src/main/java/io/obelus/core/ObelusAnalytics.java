@@ -1,4 +1,4 @@
-package io.obelus.sdk.analytics;
+package io.obelus.core;
 
 /**
  * An analytics event router.
