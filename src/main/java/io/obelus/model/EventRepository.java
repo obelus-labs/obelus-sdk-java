@@ -1,4 +1,4 @@
-package io.obelus.core.event;
+package io.obelus.model;
 
 import java.util.Map;
 
