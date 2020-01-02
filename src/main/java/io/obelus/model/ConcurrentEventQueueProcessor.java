@@ -5,7 +5,7 @@ import io.obelus.model.converter.JsonMarshaller;
 /**
  * This class is used to transform an entire {@link io.obelus.model.ConcurrentEventQueue} into a single JSON object.
  *
- * <p>{@link io.obelus.model.ObelusAnalytics} uses this object to compress queued events that will eventually be sent
+ * <p>{@link io.obelus.ObelusAnalytics} uses this object to compress queued events that will eventually be sent
  * to the Obelus servers.</p>
  */
 class ConcurrentEventQueueProcessor {
