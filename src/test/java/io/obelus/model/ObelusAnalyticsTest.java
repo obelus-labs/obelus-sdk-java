@@ -1,5 +1,6 @@
-package io.obelus.sdk.analytics;
+package io.obelus.model;
 
+import io.obelus.ObelusAnalytics;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
