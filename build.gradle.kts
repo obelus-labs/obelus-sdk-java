@@ -17,6 +17,16 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
 }
 
+lombok {
+    version = "1.18.10"
+    sha256 = ""
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
 tasks.named<Test>("test") {
     useJUnitPlatform()
 }
