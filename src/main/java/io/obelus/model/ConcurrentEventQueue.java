@@ -1,5 +1,6 @@
 package io.obelus.model;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -10,6 +11,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public final class ConcurrentEventQueue implements EventRepository {
 
+    @SerializedName("event_list")
     private volatile ConcurrentLinkedQueue<ObelusEvent> events;
 
     public ConcurrentEventQueue() {

@@ -1,7 +1,9 @@
 package io.obelus;
 
-import io.obelus.model.EventRepository;
-import io.obelus.model.ObelusClient;
+import io.obelus.model.ConcurrentEventQueue;
+import io.obelus.model.ConcurrentEventQueueProcessor;
+import io.obelus.model.ObelusEventDispatcher;
+import io.obelus.model.converter.GsonMarshaller;
 
 import java.util.Map;
 
@@ -12,31 +14,42 @@ public final class ObelusAnalytics {
     /**
      * The singleton instance of runedocks.
      */
-    private static ObelusAnalytics instance;
+    private static ObelusAnalytics INSTANCE;
 
-    private final EventRepository eventRepository;
+    private final ObelusEventDispatcher eventDispatcher;
 
+    private final ConcurrentEventQueue eventQueue;
+
+    private final ConcurrentEventQueueProcessor eventProcessor;
+
+    /**
+     * Private constructor, encourages usage of singleton.
+     */
     private ObelusAnalytics() {
-        this.instance = instance;
-        this.eventRepository = new ObelusClient();
+        this.INSTANCE = this;
+        this.eventDispatcher = new ObelusEventDispatcher();
+        this.eventQueue = new ConcurrentEventQueue();
+        this.eventProcessor = new ConcurrentEventQueueProcessor(new GsonMarshaller());
     }
 
     /**
-     * Retrieves an instance of {@link ObelusAnalytics}.
+     * Retrieves the single instance of {@link ObelusAnalytics}.
      */
     public static ObelusAnalytics analytics() {
-        if (instance == null) {
+        if (INSTANCE == null) {
             return new ObelusAnalytics();
         } else {
-            return instance;
+            return INSTANCE;
         }
     }
 
     /**
+     * Queues an event to be logged.
+     *
      * @param eventName
      * @param eventData
      */
     public void logEvent(String eventName, Map<String, Object> eventData) {
-        this.eventRepository.logEvent(eventName, eventData);
+        this.eventQueue.logEvent(eventName, eventData);
     }
 }
