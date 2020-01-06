@@ -10,6 +10,10 @@ jdk:
   - openjdk8
   - openjdk12
 
+jobs:
+  allow_failures:
+    - os: windows
+
 script:
   - ./gradlew build --info --stacktrace --console=plain --build-cache -Dkotlin.colors.enabled=false
 
