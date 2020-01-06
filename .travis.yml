@@ -1,0 +1,25 @@
+language: java
+
+install: true
+
+os:
+  - linux
+
+jdk:
+  - openjdk11
+  - openjdk12
+
+jobs:
+  allow_failures:
+    - os: windows
+
+script:
+  - ./gradlew build --info --stacktrace --console=plain --build-cache -Dkotlin.colors.enabled=false
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
