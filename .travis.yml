@@ -1,0 +1,20 @@
+language: java
+
+install: true
+
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      jdk: openjdk12
+
+script:
+  - ./gradlew build --info --stacktrace --console=plain --build-cache -Dkotlin.colors.enabled=false
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
