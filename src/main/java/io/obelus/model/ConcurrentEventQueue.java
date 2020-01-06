@@ -1,6 +1,7 @@
 package io.obelus.model;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
