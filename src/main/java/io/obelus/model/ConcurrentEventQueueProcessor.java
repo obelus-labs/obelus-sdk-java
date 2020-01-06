@@ -8,6 +8,7 @@ import io.obelus.model.converter.JsonMarshaller;
  * <p>{@link io.obelus.ObelusAnalytics} uses this object to compress queued events that will eventually be sent
  * to the Obelus servers.</p>
  */
+
 public class ConcurrentEventQueueProcessor {
 
     private JsonMarshaller jsonMarshaller;
