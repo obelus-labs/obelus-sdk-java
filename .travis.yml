@@ -2,11 +2,13 @@ language: java
 
 install: true
 
-matrix:
-  include:
-    - os: linux
-      sudo: required
-      jdk: openjdk12
+os:
+  - linux
+  - windows
+
+jdk:
+  - openjdk8
+  - openjdk12
 
 script:
   - ./gradlew build --info --stacktrace --console=plain --build-cache -Dkotlin.colors.enabled=false
