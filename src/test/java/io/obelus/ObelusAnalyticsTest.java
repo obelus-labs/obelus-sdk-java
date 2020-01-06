@@ -1,20 +1,32 @@
-package io.obelus.model;
+package io.obelus;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-public class AnalyticsTest {
+public class ObelusAnalyticsTest {
+
+
+    @Test
+    void isSingleton() {
+        ObelusAnalytics instance = ObelusAnalytics.analytics();
+        Assertions.assertNotNull(instance);
+
+        // Attempt to create another instance of Runedocks.
+        ObelusAnalytics instance2 = ObelusAnalytics.analytics();
+        Assertions.assertEquals(instance, instance2);
+    }
 
     @Test
     void logEventWithNoParameters() {
-        Analytics analytics = new Analytics();
+        ObelusAnalytics analytics = ObelusAnalytics.analytics();
         analytics.logEvent("", null);
     }
 
     @Test
     void logEventWithSingleParameter() {
-        Analytics analytics = new Analytics();
+        ObelusAnalytics analytics = ObelusAnalytics.analytics();
         var eventData = new HashMap<String, Object>();
 
         eventData.put("achievement_name", "collect_10_legos");
@@ -25,7 +37,7 @@ public class AnalyticsTest {
 
     @Test
     void logEventWithMultipleParameters() {
-        Analytics analytics = new Analytics();
+        ObelusAnalytics analytics = ObelusAnalytics.analytics();
 
         var eventData = new HashMap<String, Object>();
         eventData.put("current_type", "USD");
@@ -36,7 +48,7 @@ public class AnalyticsTest {
 
     @Test
     void flushWithNoEvents() {
-        Analytics analytics = new Analytics();
+        ObelusAnalytics analytics = ObelusAnalytics.analytics();
         var eventData = new HashMap<String, Object>();
         eventData.put("username", "average_joe");
 
@@ -45,13 +57,13 @@ public class AnalyticsTest {
 
     @Test
     void flushWithSingleEvent() {
-        Analytics analytics = new Analytics();
+        ObelusAnalytics analytics = ObelusAnalytics.analytics();
         analytics.logEvent("achievement_unlocked", null);
     }
 
     @Test
     void flushWithMultipleEvents() {
-        Analytics analytics = new Analytics();
+        ObelusAnalytics analytics = ObelusAnalytics.analytics();
 
         // Event 1
         var event1Data = new HashMap<String, Object>();

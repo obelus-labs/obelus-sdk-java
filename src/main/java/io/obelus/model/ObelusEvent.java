@@ -1,7 +1,6 @@
 package io.obelus.model;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
 
 import java.util.Collections;
 import java.util.Map;
@@ -9,7 +8,6 @@ import java.util.Map;
 /**
  * A single event to be sent to the Obelus platform.
  */
-@Getter
 final class ObelusEvent {
 
     @SerializedName("event_name")
@@ -37,5 +35,13 @@ final class ObelusEvent {
     public ObelusEvent(String eventName, Map<String, Object> eventData) {
         this.eventName = eventName;
         this.eventData = eventData;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public Map<String, Object> getEventData() {
+        return eventData;
     }
 }

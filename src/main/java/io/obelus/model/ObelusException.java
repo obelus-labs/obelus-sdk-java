@@ -1,11 +1,9 @@
 package io.obelus.model;
 
-import lombok.Getter;
 
 /**
  *
  */
-@Getter
 public abstract class ObelusException extends Exception {
 
     private String code;
@@ -21,4 +19,11 @@ public abstract class ObelusException extends Exception {
         this.statusCode = statusCode;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public Integer getStatusCode() {
+        return statusCode;
+    }
 }
