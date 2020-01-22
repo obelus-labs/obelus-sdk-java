@@ -3,9 +3,6 @@ plugins {
     idea
 }
 
-group = "io.obelus"
-version = "1.0-SNAPSHOT"
-
 repositories {
     mavenCentral()
 }
