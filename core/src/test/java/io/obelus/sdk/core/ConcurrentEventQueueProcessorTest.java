@@ -1,7 +1,7 @@
-package io.obelus.model;
+package io.obelus.sdk.core;
 
-import io.obelus.model.converter.GsonMarshaller;
-import io.obelus.model.converter.JsonMarshaller;
+import io.obelus.sdk.core.converter.GsonMarshaller;
+import io.obelus.sdk.core.converter.JsonMarshaller;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
