@@ -1,9 +1,6 @@
-package io.obelus;
+package io.obelus.sdk.core;
 
-import io.obelus.model.ConcurrentEventQueue;
-import io.obelus.model.ConcurrentEventQueueProcessor;
-import io.obelus.model.ObelusEventDispatcher;
-import io.obelus.model.converter.GsonMarshaller;
+import io.obelus.sdk.core.converter.GsonMarshaller;
 
 import java.util.Map;
 

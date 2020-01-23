@@ -1,4 +1,4 @@
-package io.obelus.model;
+package io.obelus.sdk.core;
 
 import okhttp3.*;
 

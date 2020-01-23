@@ -1,4 +1,4 @@
-package io.obelus.model;
+package io.obelus.sdk.core;
 
 /**
  * <p> This object is used to store Oauth2 results. </p>

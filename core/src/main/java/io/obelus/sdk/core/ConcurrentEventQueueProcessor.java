@@ -1,12 +1,12 @@
-package io.obelus.model;
+package io.obelus.sdk.core;
 
-import io.obelus.model.converter.JsonMarshaller;
+import io.obelus.sdk.core.converter.JsonMarshaller;
 
 /**
- * This class is used to transform an entire {@link io.obelus.model.ConcurrentEventQueue} into a single JSON object.
+ * This class is used to transform an entire {@link ConcurrentEventQueue} into a single JSON object.
  *
- * <p>{@link io.obelus.ObelusAnalytics} uses this object to compress queued events that will eventually be sent
- * to the Obelus servers.</p>
+ * <p>{@link io.obelus.sdk.core.ObelusAnalytics} uses this object to compress queued events that will eventually be
+ * sent to the Obelus servers.</p>
  */
 
 public class ConcurrentEventQueueProcessor {
@@ -17,14 +17,14 @@ public class ConcurrentEventQueueProcessor {
      * Creates a new concurrent event queue processor.
      *
      * @param jsonMarshaller
-     *         the {@link io.obelus.model.converter.JsonMarshaller} implementation to use.
+     *         the {@link io.obelus.sdk.core.converter.JsonMarshaller} implementation to use.
      */
     public ConcurrentEventQueueProcessor(JsonMarshaller jsonMarshaller) {
         this.jsonMarshaller = jsonMarshaller;
     }
 
     /**
-     * Converts a {@link io.obelus.model.ConcurrentEventQueue} into a single JSON object.
+     * Converts a {@link ConcurrentEventQueue} into a single JSON object.
      */
     protected synchronized String process(ConcurrentEventQueue repository) {
         if (repository.get().isEmpty()) {

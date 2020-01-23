@@ -1,4 +1,4 @@
-package io.obelus.model.converter;
+package io.obelus.sdk.core.converter;
 
 
 /**
